@@ -75,6 +75,12 @@ fn main() -> Result<(), io::Error> {
             }
         }
 
+        // better use drone.rc_state to manipulate the movement.
+        // drone.rc_state.go_left_right(sidewards);
+        // drone.rc_state.go_forward_back(forwards);
+        // drone.rc_state.go_up_down(upwards);
+        // drone.rc_state.turn(turn);
+        // You could directly use them at the keyboard input (without local variables)
         drone
             .send_stick(upwards, sidewards, forwards, turn, false)
             .unwrap();
